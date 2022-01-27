@@ -23,59 +23,61 @@ class _DetailDiaryState extends State<DetailDiary> {
         appBar: AppBar(
           title: Text('운동 정보'),
         ),
-        body: Column(
-          children: [
-            Row(
-              children: [
-                topCircle('가슴', 0),
-                topCircle('등', 1),
-                topCircle('하체', 2),
-                topCircle('어깨', 3)
-              ],),
-            Row(
-              children: [
-                bottomButton('벤치프레스'),
-                bottomButton('딥스'),
-                bottomButton('인클라인벤치'),
-                bottomButton('푸쉬업')
-                ],
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  topCircle('가슴', 0),
+                  topCircle('등', 1),
+                  topCircle('하체', 2),
+                  topCircle('어깨', 3)
+                ],),
+              Row(
+                children: [
+                  bottomButton('벤치프레스'),
+                  bottomButton('딥스'),
+                  bottomButton('인클라인벤치'),
+                  bottomButton('푸쉬업')
+                  ],
+                ),
+              Padding(
+                padding: const EdgeInsets.only(top: 40),
+                child: DataTable(
+                    columns: <DataColumn>[
+                      tableColumn('SET'),
+                      tableColumn('무게'),
+                      tableColumn('횟수')
+                    ],
+                    rows: <DataRow>[
+                      tableRow(1,80,10),
+                      tableRow(2,80,10),
+                      tableRow(3,80,10),
+                      tableRow(4,80,10),
+                      tableRow(5,80,10),
+                      tableRow(6,80,10),
+                      tableRow(7,80,10),
+                      tableRow(8,80,10),
+                      tableRow(9,80,10),
+                    ],
+                ),
               ),
-            Padding(
-              padding: const EdgeInsets.only(top: 40),
-              child: DataTable(
+              DataTable(
                   columns: <DataColumn>[
-                    tableColumn('SET'),
-                    tableColumn('무게'),
-                    tableColumn('횟수')
+                    tableColumn('평균 무게'),
+                    tableColumn('총 볼륨수')
                   ],
                   rows: <DataRow>[
-                    tableRow(1,80,10),
-                    tableRow(2,80,10),
-                    tableRow(3,80,10),
-                    tableRow(4,80,10),
-                    tableRow(5,80,10),
-                    tableRow(6,80,10),
-                    tableRow(7,80,10),
-                    tableRow(8,80,10),
-                    tableRow(9,80,10),
-                  ],
-              ),
-            ),
-            DataTable(
-                columns: <DataColumn>[
-                  tableColumn('평균 무게'),
-                  tableColumn('총 볼륨수')
-                ], 
-                rows: <DataRow>[
-                  DataRow(cells: <DataCell>[
-                    DataCell(Text('무게총합 / 세트수')),
-                    DataCell(Text('세트당 무게x횟수 총 합'))
-                  ])
-                ]),
-            ElevatedButton(onPressed: (){
-              print(getSelectedIndex());
-            }, child: Text('asdasd'))
-          ],
+                    DataRow(cells: <DataCell>[
+                      DataCell(Text('무게총합 / 세트수')),
+                      DataCell(Text('세트당 무게x횟수 총 합'))
+                    ])
+                  ]),
+              ElevatedButton(onPressed: (){
+                print(getSelectedIndex());
+              }, child: Text('asdasd'))
+            ],
+          ),
         ));
   }
 
