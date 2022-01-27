@@ -171,4 +171,6 @@ class _DetailDiaryState extends State<DetailDiary> {
     }
     return 0;
   }
+  
+  /// 내가 쳐 커밋을 한 곳
 }
