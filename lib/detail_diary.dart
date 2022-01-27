@@ -171,4 +171,6 @@ class _DetailDiaryState extends State<DetailDiary> {
     }
     return 0;
   }
+  
+  ///준우가 커밋한 곳
 }
