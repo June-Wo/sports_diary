@@ -171,6 +171,7 @@ class _DetailDiaryState extends State<DetailDiary> {
     }
     return 0;
   }
-  
+
   ///준우가 커밋한 곳
+  /// 내가 쳐 커밋을 한 곳
 }
